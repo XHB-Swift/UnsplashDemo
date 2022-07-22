@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "xhbcommonswiftlib",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:XHB-Swift/XHBCommonSwiftLib.git",
+      "state" : {
+        "revision" : "ecbc3513aca9460df4d12b20b1193a4a34d89cdf",
+        "version" : "1.1.4"
+      }
+    },
+    {
+      "identity" : "xhbfoundationswiftlib",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:XHB-Swift/XHBFoundationSwiftLib.git",
+      "state" : {
+        "revision" : "465a1835d27e808fc8d522eb1e800557c6983c66",
+        "version" : "0.1.8"
+      }
+    }
+  ],
+  "version" : 2
+}
