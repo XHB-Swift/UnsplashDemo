@@ -8,12 +8,27 @@
 import UIKit
 
 
-class AppMainViewController: UIViewController {
+class AppMainViewController: UITabBarController {
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        viewControllers = [
+            HomeViewController()
+        ]
+        selectedIndex = 0
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         
         view.backgroundColor = .white
-        let tabr = UITabBar(frame: .zero)
+        setupSubviews()
     }
     
+    func setupSubviews() {
+        
+    }
 }
