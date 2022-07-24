@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = .init(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = HomeViewController()
+        window?.rootViewController = HomePhotoRouter.createModule()
         window?.makeKeyAndVisible()
         
         return true

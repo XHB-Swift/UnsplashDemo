@@ -10,14 +10,19 @@
 		42AE0D82288A478500644EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0D81288A478500644EA4 /* AppDelegate.swift */; };
 		42AE0D8B288A478600644EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AE0D8A288A478600644EA4 /* Assets.xcassets */; };
 		42AE0D8E288A478600644EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42AE0D8C288A478600644EA4 /* LaunchScreen.storyboard */; };
-		42AE0D97288A4C3A00644EA4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0D96288A4C3A00644EA4 /* HomeViewController.swift */; };
+		42AE0D97288A4C3A00644EA4 /* HomePhototViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0D96288A4C3A00644EA4 /* HomePhototViewController.swift */; };
 		42AE0D9A288A4D2900644EA4 /* XHBCommonSwiftLib in Frameworks */ = {isa = PBXBuildFile; productRef = 42AE0D99288A4D2900644EA4 /* XHBCommonSwiftLib */; };
-		42AE0D9C288A4E1600644EA4 /* AppMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0D9B288A4E1600644EA4 /* AppMainViewController.swift */; };
-		42AE0DA1288A4F4E00644EA4 /* AppMainBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0DA0288A4F4E00644EA4 /* AppMainBottomView.swift */; };
-		42AE0DA3288A7ABC00644EA4 /* AppMainBottomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0DA2288A7ABC00644EA4 /* AppMainBottomItemView.swift */; };
 		42AE0DA6288AA48D00644EA4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0DA5288AA48D00644EA4 /* Network.swift */; };
 		42AE0DA8288ABE1200644EA4 /* Network+PhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0DA7288ABE1200644EA4 /* Network+PhotoList.swift */; };
 		42AE0DAB288ACBBE00644EA4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE0DAA288ACBBE00644EA4 /* Photo.swift */; };
+		C66BA27C288AD9F10052C5B6 /* HomePhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA27B288AD9F10052C5B6 /* HomePhotoCollectionView.swift */; };
+		C66BA27E288ADA340052C5B6 /* HomePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA27D288ADA340052C5B6 /* HomePhotoCollectionViewCell.swift */; };
+		C66BA281288AE63B0052C5B6 /* VIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA280288AE63B0052C5B6 /* VIPER.swift */; };
+		C66BA284288D88AD0052C5B6 /* HomePhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA283288D88AD0052C5B6 /* HomePhotoPresenter.swift */; };
+		C66BA287288D8B870052C5B6 /* HomePhotoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA286288D8B870052C5B6 /* HomePhotoInteractor.swift */; };
+		C66BA28A288D8DB50052C5B6 /* HomePhotoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA289288D8DB50052C5B6 /* HomePhotoRouter.swift */; };
+		C66BA28C288D922D0052C5B6 /* HomePhotoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA28B288D922D0052C5B6 /* HomePhotoNetwork.swift */; };
+		C66BA28F288D9A800052C5B6 /* CustomCellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA28E288D9A800052C5B6 /* CustomCellIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +31,18 @@
 		42AE0D8A288A478600644EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42AE0D8D288A478600644EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42AE0D8F288A478600644EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42AE0D96288A4C3A00644EA4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		42AE0D9B288A4E1600644EA4 /* AppMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainViewController.swift; sourceTree = "<group>"; };
-		42AE0DA0288A4F4E00644EA4 /* AppMainBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainBottomView.swift; sourceTree = "<group>"; };
-		42AE0DA2288A7ABC00644EA4 /* AppMainBottomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainBottomItemView.swift; sourceTree = "<group>"; };
+		42AE0D96288A4C3A00644EA4 /* HomePhototViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhototViewController.swift; sourceTree = "<group>"; };
 		42AE0DA5288AA48D00644EA4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		42AE0DA7288ABE1200644EA4 /* Network+PhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+PhotoList.swift"; sourceTree = "<group>"; };
 		42AE0DAA288ACBBE00644EA4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C66BA27B288AD9F10052C5B6 /* HomePhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoCollectionView.swift; sourceTree = "<group>"; };
+		C66BA27D288ADA340052C5B6 /* HomePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		C66BA280288AE63B0052C5B6 /* VIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER.swift; sourceTree = "<group>"; };
+		C66BA283288D88AD0052C5B6 /* HomePhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoPresenter.swift; sourceTree = "<group>"; };
+		C66BA286288D8B870052C5B6 /* HomePhotoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoInteractor.swift; sourceTree = "<group>"; };
+		C66BA289288D8DB50052C5B6 /* HomePhotoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoRouter.swift; sourceTree = "<group>"; };
+		C66BA28B288D922D0052C5B6 /* HomePhotoNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoNetwork.swift; sourceTree = "<group>"; };
+		C66BA28E288D9A800052C5B6 /* CustomCellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,8 @@
 		42AE0D80288A478500644EA4 /* UnsplashDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C66BA28D288D9A710052C5B6 /* CustomCellIdentifiable */,
+				C66BA27F288AE6290052C5B6 /* Pattern */,
 				42AE0DA9288ACBB500644EA4 /* Model */,
 				42AE0DA4288AA44B00644EA4 /* Network */,
 				42AE0D95288A4C3000644EA4 /* App */,
@@ -80,7 +92,6 @@
 		42AE0D95288A4C3000644EA4 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				42AE0D9E288A4F2A00644EA4 /* Container */,
 				42AE0D9D288A4ECB00644EA4 /* Home */,
 			);
 			path = App;
@@ -89,27 +100,12 @@
 		42AE0D9D288A4ECB00644EA4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				42AE0D96288A4C3A00644EA4 /* HomeViewController.swift */,
+				C66BA288288D8DA10052C5B6 /* Router */,
+				C66BA285288D896E0052C5B6 /* Interactor */,
+				C66BA282288D88340052C5B6 /* Presenter */,
+				C66BA27A288AD9DC0052C5B6 /* View */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		42AE0D9E288A4F2A00644EA4 /* Container */ = {
-			isa = PBXGroup;
-			children = (
-				42AE0D9F288A4F3600644EA4 /* View */,
-				42AE0D9B288A4E1600644EA4 /* AppMainViewController.swift */,
-			);
-			path = Container;
-			sourceTree = "<group>";
-		};
-		42AE0D9F288A4F3600644EA4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				42AE0DA0288A4F4E00644EA4 /* AppMainBottomView.swift */,
-				42AE0DA2288A7ABC00644EA4 /* AppMainBottomItemView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		42AE0DA4288AA44B00644EA4 /* Network */ = {
@@ -127,6 +123,57 @@
 				42AE0DAA288ACBBE00644EA4 /* Photo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C66BA27A288AD9DC0052C5B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42AE0D96288A4C3A00644EA4 /* HomePhototViewController.swift */,
+				C66BA27B288AD9F10052C5B6 /* HomePhotoCollectionView.swift */,
+				C66BA27D288ADA340052C5B6 /* HomePhotoCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C66BA27F288AE6290052C5B6 /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA280288AE63B0052C5B6 /* VIPER.swift */,
+			);
+			path = Pattern;
+			sourceTree = "<group>";
+		};
+		C66BA282288D88340052C5B6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA283288D88AD0052C5B6 /* HomePhotoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C66BA285288D896E0052C5B6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA286288D8B870052C5B6 /* HomePhotoInteractor.swift */,
+				C66BA28B288D922D0052C5B6 /* HomePhotoNetwork.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C66BA288288D8DA10052C5B6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA289288D8DB50052C5B6 /* HomePhotoRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C66BA28D288D9A710052C5B6 /* CustomCellIdentifiable */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA28E288D9A800052C5B6 /* CustomCellIdentifiable.swift */,
+			);
+			path = CustomCellIdentifiable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,14 +252,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C66BA28A288D8DB50052C5B6 /* HomePhotoRouter.swift in Sources */,
 				42AE0DAB288ACBBE00644EA4 /* Photo.swift in Sources */,
 				42AE0DA8288ABE1200644EA4 /* Network+PhotoList.swift in Sources */,
-				42AE0DA1288A4F4E00644EA4 /* AppMainBottomView.swift in Sources */,
-				42AE0D9C288A4E1600644EA4 /* AppMainViewController.swift in Sources */,
+				C66BA287288D8B870052C5B6 /* HomePhotoInteractor.swift in Sources */,
+				C66BA28F288D9A800052C5B6 /* CustomCellIdentifiable.swift in Sources */,
+				C66BA284288D88AD0052C5B6 /* HomePhotoPresenter.swift in Sources */,
 				42AE0DA6288AA48D00644EA4 /* Network.swift in Sources */,
+				C66BA27C288AD9F10052C5B6 /* HomePhotoCollectionView.swift in Sources */,
+				C66BA27E288ADA340052C5B6 /* HomePhotoCollectionViewCell.swift in Sources */,
+				C66BA281288AE63B0052C5B6 /* VIPER.swift in Sources */,
+				C66BA28C288D922D0052C5B6 /* HomePhotoNetwork.swift in Sources */,
 				42AE0D82288A478500644EA4 /* AppDelegate.swift in Sources */,
-				42AE0D97288A4C3A00644EA4 /* HomeViewController.swift in Sources */,
-				42AE0DA3288A7ABC00644EA4 /* AppMainBottomItemView.swift in Sources */,
+				42AE0D97288A4C3A00644EA4 /* HomePhototViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
