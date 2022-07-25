@@ -27,23 +27,19 @@ class HomePhotoCollectionViewLayout: UICollectionViewLayout {
         layoutAttributes.removeAll()
         guard let collectionView = collectionView else { return }
         let numberOfItems = collectionView.numberOfItems(inSection: 0)
-        var center: CGPoint = .zero
+        let spacing = (collectionView.width - itemSize.width) / 2
+        var start: CGPoint = .init(x: spacing, y: spacing)
         (0..<numberOfItems)
             .forEach {
                 let indexPath = IndexPath(item: $0, section: 0)
                 let layoutAttributes: UICollectionViewLayoutAttributes = .init(forCellWith: indexPath)
-                layoutAttributes.size = itemSize
-                if center == .zero {
-                    center = layoutAttributes.center
-                }
-                layoutAttributes.center.x = center.x + 5
-                layoutAttributes.center.y = center.y + 5
+                layoutAttributes.frame = .init(origin: start, size: itemSize)
                 if $0 % 2 == 0 {
-                    center.x = layoutAttributes.center.x + 5 + itemSize.width
-                    center.y = layoutAttributes.center.y + 5
+                    start.x = layoutAttributes.frame.maxX + spacing
+                    start.y = layoutAttributes.frame.minY
                 } else {
-                    center.x = layoutAttributes.center.x - 5 - itemSize.width
-                    center.y = layoutAttributes.center.y + 5 + itemSize.height
+                    start.x = spacing
+                    start.y = layoutAttributes.frame.maxY + spacing
                 }
                 self.layoutAttributes[indexPath] = layoutAttributes
             }
