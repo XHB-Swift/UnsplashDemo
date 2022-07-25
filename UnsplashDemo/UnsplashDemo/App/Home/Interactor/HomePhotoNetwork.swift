@@ -16,7 +16,7 @@ class HomePhotoNetwork {
     func requestPhotoList(completion: @escaping ([Photo]) -> Void) {
         FutureObservable<Data, Error> { [weak self] promise in
             guard let strongSelf = self else { return }
-            guard let request = API.list(page: strongSelf.page).toRequest else { return }
+            guard let request = API.list(page: strongSelf.page, per_page: 20).toRequest else { return }
             URLSession.shared.dataTask(with: request) { data, response, error in
                 if let data = data {
                     promise(.success(data))
