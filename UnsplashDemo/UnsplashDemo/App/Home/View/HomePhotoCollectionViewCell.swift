@@ -26,6 +26,11 @@ class HomePhotoCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(imgView)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView?.frame = contentView.bounds
+    }
+    
     func setImage(with url: String) {
         imageView?.setImage(with: url)
     }

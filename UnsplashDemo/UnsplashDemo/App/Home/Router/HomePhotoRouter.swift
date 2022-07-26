@@ -20,7 +20,7 @@ class HomePhotoRouter: RouterModule {
         vc.presenter?.interactor = HomePhotoInteractor()
         vc.presenter?.interactor?.presenter = presenter
         
-        return vc
+        return UINavigationController(rootViewController: vc)
         
     }
     

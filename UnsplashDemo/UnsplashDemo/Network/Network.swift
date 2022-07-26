@@ -25,10 +25,12 @@ extension URLRequest {
     public init?(api: API) {
         switch api {
         case .GET(let string):
-            guard let url = URL(string: "\(NetworkHost)\(string)") else { return nil }
+            let urlString = string.hasPrefix(NetworkHost) ? string : "\(NetworkHost)\(string)"
+            guard let url = URL(string: urlString) else { return nil }
             self.init(url: url)
         case .POST(let string, let dictionary):
-            guard let url = URL(string: "\(NetworkHost)\(string)") else { return nil }
+            let urlString = string.hasPrefix(NetworkHost) ? string : "\(NetworkHost)\(string)"
+            guard let url = URL(string: urlString) else { return nil }
             self.init(url: url)
             do {
                 httpBody = try JSONEncoder().encode(dictionary)

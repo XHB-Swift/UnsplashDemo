@@ -18,7 +18,7 @@ class HomePhotoPresenter: NSObject, PresenterModule {
     func reloadView(with photos: [Photo]) {
         self.photos = photos
         let vc = view as? HomePhotoViewController
-        vc?.reloadPhotos(photos)
+        vc?.reloadPhotos()
     }
 }
 
@@ -38,5 +38,26 @@ extension HomePhotoPresenter: UICollectionViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension HomePhotoPresenter: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension HomePhotoPresenter: HomePhotoCollectionViewLayoutDelegate {
+    
+    func homePhotoView(_ homePhotoView: HomePhotoCollectionView,
+                       layout: HomePhotoCollectionViewLayout,
+                       widthHeightScaleForItemAt indexPath: IndexPath) -> CGFloat {
+        
+        let photo = photos[indexPath.item]
+        let width = CGFloat(photo.width)
+        let height = CGFloat(photo.height)
+        
+        return height <= 0 ? 1 : width / height
     }
 }

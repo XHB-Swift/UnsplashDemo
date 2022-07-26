@@ -7,13 +7,23 @@
 
 import UIKit
 
+protocol HomePhotoCollectionViewLayoutDelegate: NSObjectProtocol {
+    
+    func homePhotoView(_ homePhotoView: HomePhotoCollectionView,
+                       layout: HomePhotoCollectionViewLayout,
+                       widthHeightScaleForItemAt indexPath: IndexPath) -> CGFloat
+}
+
 class HomePhotoCollectionViewLayout: UICollectionViewLayout {
     
     private var layoutAttributes: Dictionary<IndexPath, UICollectionViewLayoutAttributes>
+    private var layoutElements: [UICollectionViewLayoutAttributes] = .init()
     private var contentSize: CGSize = .zero
     
     var itemSize: CGSize = .zero
     override var collectionViewContentSize: CGSize { contentSize }
+    
+    weak var delegate: HomePhotoCollectionViewLayoutDelegate?
     
     override init() {
         layoutAttributes = .init()
@@ -26,28 +36,35 @@ class HomePhotoCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
-        layoutAttributes.removeAll()
-        guard let collectionView = collectionView else { return }
+        guard let collectionView = collectionView as? HomePhotoCollectionView else { return }
         contentSize.width = collectionView.width
         let numberOfItems = collectionView.numberOfItems(inSection: 0)
         let spacing = (collectionView.width - itemSize.width * 2) / 3
-        var start: CGPoint = .init(x: spacing, y: spacing)
-        contentSize.height = start.y
+        var x: CGFloat = spacing
+        var waterFrame: (maxY0: CGFloat, maxY1: CGFloat) = (spacing, spacing)
         (0..<numberOfItems)
             .forEach {
                 let indexPath = IndexPath(item: $0, section: 0)
-                let layoutAttributes: UICollectionViewLayoutAttributes = .init(forCellWith: indexPath)
-                layoutAttributes.frame = .init(origin: start, size: itemSize)
+                let layouts: UICollectionViewLayoutAttributes = .init(forCellWith: indexPath)
+                let scale = delegate?.homePhotoView(collectionView,
+                                                    layout: self,
+                                                    widthHeightScaleForItemAt: indexPath) ?? 1
+                let size: CGSize = .init(width: itemSize.width,
+                                         height: scale <= 0 ? itemSize.height : itemSize.width / scale)
                 if $0 % 2 == 0 {
-                    start.x = layoutAttributes.frame.maxX + spacing
-                    start.y = layoutAttributes.frame.minY + spacing
+                    layouts.frame = .init(origin: .init(x: x, y: waterFrame.maxY0 + spacing),
+                                                   size: size)
+                    waterFrame.maxY0 = layouts.frame.maxY
+                    x = layouts.frame.maxX + spacing
                 } else {
-                    start.x = spacing
-                    start.y = layoutAttributes.frame.maxY + spacing
+                    layouts.frame = .init(origin: .init(x: x, y: waterFrame.maxY1 + spacing), size: size)
+                    waterFrame.maxY1 = layouts.frame.maxY
+                    x = spacing
                 }
-                self.layoutAttributes[indexPath] = layoutAttributes
-                contentSize.height = start.y + itemSize.height
+                contentSize.height = max(waterFrame.maxY0, waterFrame.maxY1)
+                layoutAttributes[indexPath] = layouts
             }
+        layoutElements = layoutAttributes.sorted { $0.key < $1.key }.map { $0.value }
         super.prepare()
     }
     
@@ -55,9 +72,7 @@ class HomePhotoCollectionViewLayout: UICollectionViewLayout {
         if layoutAttributes.isEmpty {
             return super.layoutAttributesForElements(in: rect)
         } else {
-            return layoutAttributes
-                .sorted { $0.key < $1.key }
-                .map { $0.value }
+            return layoutElements
         }
     }
     
@@ -66,9 +81,15 @@ class HomePhotoCollectionViewLayout: UICollectionViewLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        guard let collectionView = collectionView else { return true }
+        guard let collectionView = collectionView else {
+            layoutAttributes.removeAll()
+            layoutElements.removeAll()
+            return true
+        }
         if collectionView.bounds.size != newBounds.size {
             contentSize = .zero
+            layoutAttributes.removeAll()
+            layoutElements.removeAll()
             return true
         }
         return super.shouldInvalidateLayout(forBoundsChange: newBounds)
