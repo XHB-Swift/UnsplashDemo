@@ -23,6 +23,10 @@
 		C66BA28A288D8DB50052C5B6 /* HomePhotoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA289288D8DB50052C5B6 /* HomePhotoRouter.swift */; };
 		C66BA28C288D922D0052C5B6 /* HomePhotoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA28B288D922D0052C5B6 /* HomePhotoNetwork.swift */; };
 		C66BA28F288D9A800052C5B6 /* CustomCellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA28E288D9A800052C5B6 /* CustomCellIdentifiable.swift */; };
+		C66BA29628919A0C0052C5B6 /* DetailPhotoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA29528919A0C0052C5B6 /* DetailPhotoRouter.swift */; };
+		C66BA29828919A240052C5B6 /* DetailPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA29728919A240052C5B6 /* DetailPhotoViewController.swift */; };
+		C66BA29A28919A7A0052C5B6 /* DetailPhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA29928919A7A0052C5B6 /* DetailPhotoPresenter.swift */; };
+		C66BA29C28919ABB0052C5B6 /* DetailPhotoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66BA29B28919ABB0052C5B6 /* DetailPhotoInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		C66BA289288D8DB50052C5B6 /* HomePhotoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoRouter.swift; sourceTree = "<group>"; };
 		C66BA28B288D922D0052C5B6 /* HomePhotoNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePhotoNetwork.swift; sourceTree = "<group>"; };
 		C66BA28E288D9A800052C5B6 /* CustomCellIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellIdentifiable.swift; sourceTree = "<group>"; };
+		C66BA29528919A0C0052C5B6 /* DetailPhotoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoRouter.swift; sourceTree = "<group>"; };
+		C66BA29728919A240052C5B6 /* DetailPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoViewController.swift; sourceTree = "<group>"; };
+		C66BA29928919A7A0052C5B6 /* DetailPhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoPresenter.swift; sourceTree = "<group>"; };
+		C66BA29B28919ABB0052C5B6 /* DetailPhotoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,7 @@
 		42AE0D95288A4C3000644EA4 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C66BA290289194210052C5B6 /* Detail */,
 				42AE0D9D288A4ECB00644EA4 /* Home */,
 			);
 			path = App;
@@ -174,6 +183,49 @@
 				C66BA28E288D9A800052C5B6 /* CustomCellIdentifiable.swift */,
 			);
 			path = CustomCellIdentifiable;
+			sourceTree = "<group>";
+		};
+		C66BA290289194210052C5B6 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA294289194610052C5B6 /* View */,
+				C66BA2932891945A0052C5B6 /* Presenter */,
+				C66BA292289194410052C5B6 /* Interactor */,
+				C66BA2912891942C0052C5B6 /* Router */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C66BA2912891942C0052C5B6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA29528919A0C0052C5B6 /* DetailPhotoRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		C66BA292289194410052C5B6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA29B28919ABB0052C5B6 /* DetailPhotoInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C66BA2932891945A0052C5B6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA29928919A7A0052C5B6 /* DetailPhotoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C66BA294289194610052C5B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C66BA29728919A240052C5B6 /* DetailPhotoViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +312,13 @@
 				C66BA284288D88AD0052C5B6 /* HomePhotoPresenter.swift in Sources */,
 				42AE0DA6288AA48D00644EA4 /* Network.swift in Sources */,
 				C66BA27C288AD9F10052C5B6 /* HomePhotoCollectionView.swift in Sources */,
+				C66BA29628919A0C0052C5B6 /* DetailPhotoRouter.swift in Sources */,
 				C66BA27E288ADA340052C5B6 /* HomePhotoCollectionViewCell.swift in Sources */,
+				C66BA29A28919A7A0052C5B6 /* DetailPhotoPresenter.swift in Sources */,
 				C66BA281288AE63B0052C5B6 /* VIPER.swift in Sources */,
 				C66BA28C288D922D0052C5B6 /* HomePhotoNetwork.swift in Sources */,
+				C66BA29828919A240052C5B6 /* DetailPhotoViewController.swift in Sources */,
+				C66BA29C28919ABB0052C5B6 /* DetailPhotoInteractor.swift in Sources */,
 				42AE0D82288A478500644EA4 /* AppDelegate.swift in Sources */,
 				42AE0D97288A4C3A00644EA4 /* HomePhototViewController.swift in Sources */,
 			);

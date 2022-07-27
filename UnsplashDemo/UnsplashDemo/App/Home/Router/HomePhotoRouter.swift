@@ -24,4 +24,7 @@ class HomePhotoRouter: RouterModule {
         
     }
     
+    func openDetail(from: ViewModule, for photo: Photo) {
+        
+    }
 }
