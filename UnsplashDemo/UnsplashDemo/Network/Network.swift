@@ -41,3 +41,11 @@ extension URLRequest {
         setValue("Client-ID \(AccessKey)", forHTTPHeaderField: "Authorization")
     }
 }
+
+extension URLSession {
+    
+    public func apiObservation(_ api: API) -> URLSession.DataTaskOservation? {
+        guard let request = api.toRequest else { return nil }
+        return .init(request: request, session: self)
+    }
+}

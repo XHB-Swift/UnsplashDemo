@@ -14,32 +14,25 @@ class HomePhotoNetwork {
     private var customCancellableSet: Set<XHBFoundationSwiftLib.AnyCancellable> = .init()
     
     func requestPhotoList(completion: @escaping ([Photo]) -> Void) {
-        FutureObservable<Data, Error> { [weak self] promise in
-            guard let strongSelf = self else { return }
-            guard let request = API.list(page: strongSelf.page, per_page: 10).toRequest else { return }
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let data = data {
-                    promise(.success(data))
-                } else if let error = error {
-                    promise(.failure(error))
+        guard let apiObserver = URLSession.shared.apiObservation(.list(page: self.page, per_page: 10))
+        else { return }
+        apiObserver
+            .map({ $0.data })
+            .decode(type: [Photo].self, decoder: JSONDecoder())
+            .receive(on: DispatchScheduler.main)
+            .sink(receiveValue: { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.page += 1
+                completion($0)
+            },
+                  completion: {
+                switch $0 {
+                case .failure(let error):
+                    print("error = \(error)")
+                case .finished:
+                    break
                 }
-            }.resume()
-        }
-        .decode(type: [Photo].self, decoder: JSONDecoder())
-        .receive(on: DispatchScheduler.main)
-        .sink(receiveValue: { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.page += 1
-            completion($0)
-        },
-              completion: {
-            switch $0 {
-            case .failure(let error):
-                print("error = \(error)")
-            case .finished:
-                break
-            }
-        })
-        .store(in: &customCancellableSet)
+            })
+            .store(in: &customCancellableSet)
     }
 }
